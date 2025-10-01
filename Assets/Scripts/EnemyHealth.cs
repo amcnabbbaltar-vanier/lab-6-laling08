@@ -28,6 +28,11 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("The enemy is died D:!!! RIP");
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.AddScore(1);
+            GameManager.Instance.LoadNextScene();
+        }
+
     }
 }
